@@ -1,0 +1,152 @@
+@font-face {
+  font-family: Raleway;
+  src: url("fonts/Raleway-Regular.woff2") format('woff2'),
+    url("fonts/Raleway-Regular.woff") format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url("fonts/Raleway-Italic.woff2") format('woff2'),
+    url("fonts/Raleway-Italic.woff") format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url("fonts/Raleway-Bold.woff2") format('woff2'),
+    url("fonts/Raleway-Bold.woff") format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'STIX Two Text';
+  src: url("fonts/STIXTwoText-SemiBold.woff2") format('woff2'),
+    url("fonts/STIXTwoText-SemiBold.woff") format('woff');
+  font-weight: 600;
+  font-display: swap;
+}
+:root {
+  --main-font: raleway;
+  --accent-font: 'STIX Two Text';
+  --bg-color: #f3efec;
+  --text-color: #312e4a;
+  --accent-color: #ffab6b;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.page {
+  min-inline-size: 360px;
+  margin: 0;
+  color: var(--text-color, #312e4a);
+  font-family: var(--main-font, sans-serif);
+  background-color: var(--bg-color, #f3efec);
+}
+
+p,
+h1,
+h2,
+h3,
+blockquote,
+ul,
+ol,
+li,
+figure {
+  margin: 0;
+}
+
+.heading {
+  font-family: var(--accent-font, serif);
+  font-weight: 600;
+  line-height: 0.9;
+  text-align: center;
+}
+
+.content-section {
+  padding: 0 5vi;
+}
+
+.header {
+  -webkit-padding-before: 10%;
+          padding-block-start: 10%;
+}
+
+.header__title {
+  -webkit-margin-after: 40px;
+          margin-block-end: 40px;
+  font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
+}
+
+.content__title {
+  margin: 7% 0 2.5%;
+  font-size: 30px;
+}
+
+.content__text-block {
+  font-size: 18px;
+}
+
+.content__text-block .content__paragraph:not(:last-of-type) {
+  -webkit-margin-after: 1.5em;
+          margin-block-end: 1.5em;
+}
+
+.content__text-block a {
+  color: inherit;
+}
+
+.content__blockquote {
+  inline-size: 75%;
+  margin: 0 auto 1.5em;
+  font-style: italic;
+  line-height: 2;
+}
+
+.content__list {
+  padding: 0 0 0 40px;
+  list-style: none;
+}
+
+.content__list li {
+  position: relative;
+}
+
+.content__list li:not(:last-of-type) {
+  -webkit-margin-after: 10px;
+          margin-block-end: 10px;
+}
+
+.content__list li::before {
+  content: '';
+  position: absolute;
+  inline-size: 15px;
+  block-size: 15px;
+  -webkit-margin-before: -7.5px;
+          margin-block-start: -7.5px;
+  background-image: url("images/marker-light.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  inset-block-start: 50%;
+  inset-inline-start: -25px;
+}
+
+.content__text-block_type_first-lettered .content__paragraph:first-of-type::first-letter {
+  display: inline-block;
+  -webkit-margin-end: 1px;
+          margin-inline-end: 1px;
+  padding: 0 4px;
+  font-weight: 700;
+  font-size: 30px;
+  background-color: var(--accent-color);
+}
